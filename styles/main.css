@@ -60,3 +60,19 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* Mobile First */
+.search-input {
+    display: none; /* Vai esconder a visualizacao desse elemento na tela */
+}
+
+/*
+    display: o comportamento dos elementos DENTRO daquele elemento cujo a classe esta aplicada.
+    position: o comportamento/posição do proprio elemento em relação a página.
+*/
+
+.app-bar {
+    top: 0;
+    position: sticky; /* Ele comeca como relative depois vira absoluto */
+    padding: 10px 20px;
+    background: var(--surface-color);
+    border-bottom: 1px solid var(--border-color);
+}
