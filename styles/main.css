@@ -87,3 +87,14 @@ h1, h2, h3, h4, h5, h6 {
 main {
     padding: 20px;
 }
+
+.title {
+    margin: 20px 0;
+    color: var(--text-color);
+}
+
+.filters {
+    gap: 12px;
+    display: flex;
+    overflow-y: scroll;
+}
