@@ -98,3 +98,25 @@ main {
     display: flex;
     overflow-y: scroll;
 }
+
+/* Pseudo-classes e pseudo-elementos */
+.filters::-webkit-scrollbar {
+    display: none;
+}
+
+.select {
+    padding: 10px 0;
+}
+
+/* Globals Styles */
+.select .input {
+    /* FLEX BOX */
+    display: flex;
+    align-items: center;
+    min-width: max-content;
+}
+
+.select .input .icon {
+    display: flex;
+    align-items: center;
+}
