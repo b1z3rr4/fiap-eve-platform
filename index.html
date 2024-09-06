@@ -14,6 +14,7 @@
         content="https://img.freepik.com/fotos-premium/pessoas-felizes-conversando-com-pessoas-diferentes-em-um-evento-na-sala-de-conferencias-de-cores-brilhantes-com-generative-ai_1375-12713.jpg">
     <meta property="og:url" content="https://eve.com">
 
+    <link rel="manifest" href="/manifest.json">
 
     <link rel="stylesheet" href="/styles/main.css" type="text/css">
 
@@ -105,12 +106,16 @@
 
         <section class="listing" aria-labelledby="event-list">
             <h3 id="event-list" class="visually-hidden">Lista de eventos</h3>
-            
+
             <!-- Container -->
             <div class="events">
                 <div class="event" aria-labelledby="event-1" tabindex="0">
                     <div class="cover">
                         <picture>
+                            <source srcset="/images/high/evento-1.jpg" media="(min-resolution: 2dppx)"
+                                sizes="(max-width: 600px) 100vw, 50vw">
+                            <source srcset="/images/low/evento-1.jpeg" media="(max-resolution: 1dppx)"
+                                sizes="(max-width: 600px) 100vw, 50vw">
                             <img src="/images/low/evento-1.jpeg"
                                 alt="Imagem de um encontro literário com pessoas em um ambiente de escrita"
                                 loading="lazy" aria-describedby="event-1-description" width="275" height="183">
@@ -140,6 +145,10 @@
                 <div class="event" aria-labelledby="event-2" tabindex="0">
                     <div class="cover">
                         <picture>
+                            <source srcset="/images/high/evento-2.png" media="(min-resolution: 2dppx)"
+                                sizes="(max-width: 600px) 100vw, 50vw">
+                            <source srcset="/images/low/evento-2.png" media="(max-resolution: 1dppx)"
+                                sizes="(max-width: 600px) 100vw, 50vw">
                             <img src="/images/low/evento-2.png"
                                 alt="Imagem de uma oficina de escrita criativa com materiais de escrita e pessoas"
                                 loading="lazy" aria-describedby="event-2-description" width="540" height="784">
@@ -161,6 +170,10 @@
                 <div class="event" aria-labelledby="event-3" tabindex="0">
                     <div class="cover">
                         <picture>
+                            <source srcset="/images/high/evento-3.jpeg" media="(min-resolution: 2dppx)"
+                                sizes="(max-width: 600px) 100vw, 50vw">
+                            <source srcset="/images/low/evento-3.jpeg" media="(max-resolution: 1dppx)"
+                                sizes="(max-width: 600px) 100vw, 50vw">
                             <img src="/images/low/evento-3.jpeg"
                                 alt="Imagem de uma mesa redonda com discussão sobre literatura" loading="lazy"
                                 aria-describedby="event-3-description" width="640" height="426">
@@ -181,6 +194,10 @@
                 <div class="event" aria-labelledby="event-4" tabindex="0">
                     <div class="cover">
                         <picture>
+                            <source srcset="/images/high/evento-4.jpg" media="(min-resolution: 2dppx)"
+                                sizes="(max-width: 600px) 100vw, 50vw">
+                            <source srcset="/images/low/evento-4.jpg" media="(max-resolution: 1dppx)"
+                                sizes="(max-width: 600px) 100vw, 50vw">
                             <img src="/images/low/evento-4.jpg"
                                 alt="Imagem de um clube de leitura com livros e discussões" loading="lazy"
                                 aria-describedby="event-4-description" width="720" height="720">
