@@ -10,3 +10,40 @@
     src: url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap') format('woff2');
     font-display: swap;
 }
+
+/* Reset (simples) page */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Globals */
+:root {
+    --primary-color: #0077b6;
+    --secondary-color: #ffba08;
+    --background-color: #f7f7f7;
+    --surface-color: #ffffff;
+    --accent-color: #00b894;
+    --text-color: #2d3436;
+    --muted-text-color: #636e72;
+    --error-color: #d63031;
+    --border-color: #E6E6E6;
+    --poppins-font: 'Poppins', 'Arial', sans-serif;
+    --poppins-size: 16px;
+    --poppins-line-height: 1.5;
+    --poppins-letter-spacing: 0.3px;
+    --roboto-font: 'Roboto', 'Arial', sans-serif;
+    --roboto-size: 16px;
+    --roboto-line-height: 1.5;
+    --roboto-letter-spacing: 0.5px;
+}
+
+html, body {
+    width: 100vw;
+    font-family: var(--roboto-font);
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--poppins-font);
+}
