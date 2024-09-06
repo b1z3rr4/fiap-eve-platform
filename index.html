@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-br">
 
 <head>
     <meta charset="UTF-8">
@@ -19,35 +19,165 @@
 </head>
 
 <body>
-
-    <header>
-        <h1 class="logo">eve</h1>
-        <div class="search">
-            <label for="search-event">Pesquise por eventos</label>
-            <input id="search-event" type="text" placeholder="Pesquise por eventos..." class="search-input"
-                aria-label="Pesquise por eventos">
-
-            <label for="location-input">Sua Localização</label>
-            <input id="location-input" type="text" placeholder="Localização" class="search-input"
-                aria-label="Sua Localização">
-
-            <button aria-label="Pesquisar">
-                <span class="material-symbols-outlined">
+    <header class="app-bar">
+        <h1 class="logo" aria-label="Título principal da página">eve</h1>
+        <div class="search-input">
+            <label for="search-events" class="visually-hidden">Pesquisar por eventos</label>
+            <input id="search-events" type="text" placeholder="Pesquisar por eventos..."
+                aria-label="Pesquisar por eventos" aria-required="true" tabindex="0">
+            <label for="location" class="visually-hidden">Localização</label>
+            <input id="location" type="text" placeholder="Localização" disabled aria-label="Localização">
+            <button aria-label="Buscar eventos" aria-describedby="search-events">
+                <span class="material-symbols-outlined" aria-hidden="true">
                     search
                 </span>
+                <span class="visually-hidden">Buscar eventos</span>
             </button>
         </div>
     </header>
 
     <main>
-        <h2>Eventos perto de você</h2>
+        <h2 class="title">Eventos perto de você</h2>
 
         <section class="filters">
+            <div class="select" tabindex="0">
+                <div class="input">
+                    <p>Qualquer data:</p>
+                    <div class="icon">
+                        <span class="material-symbols-outlined" aria-hidden="true">
+                            arrow_drop_down
+                        </span>
+                    </div>
+                </div>
+            </div>
 
+            <div class="select" id="tipo" tabindex="0">
+                <div class="input">
+                    <p>Qualquer tipo:</p>
+                    <div class="icon">
+                        <span class="material-symbols-outlined" aria-hidden="true">
+                            arrow_drop_down
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="select" id="classificacao" tabindex="0">
+                <div class="input fulfilled">
+                    <p>Classificar por:</p>
+                    <div class="icon fulfilled">
+                        <span class="material-symbols-outlined" aria-hidden="true">
+                            arrow_drop_down
+                        </span>
+                    </div>
+                </div>
+            </div>
         </section>
 
-        <section class="listing">
+        <section class="listing" aria-labelledby="event-list">
+            <h3 id="event-list" class="visually-hidden">Lista de eventos</h3>
+            <div class="events">
+                <div class="event" aria-labelledby="event-1" tabindex="0">
+                    <div class="cover">
+                        <picture>
+                            <img src="/images/low/evento-1.jpeg"
+                                alt="Imagem de um encontro literário com pessoas em um ambiente de escrita"
+                                loading="lazy" aria-describedby="event-1-description" width="275" height="183">
+                        </picture>
+                    </div>
+                    <div class="info">
+                        <p class="topic">Encontro Virtual Literatura e Criatividade</p>
+                        <div class="text-container">
+                            <p id="event-1-description" class="description">
+                                Participe do "Encontro Virtual: Literatura e Criatividade", um evento que celebra o
+                                poder
+                                das palavras e a imaginação sem limites! Reuniremos escritores, leitores e entusiastas
+                                para uma jornada através do mundo literário, explorando técnicas criativas, trocando
+                                experiências e se inspirando em novas histórias. Venha descobrir como a literatura pode
+                                abrir portas para novos universos e conectar pessoas através da criatividade. Seja você
+                                um
+                                autor experiente ou alguém que simplesmente ama boas histórias, este encontro é para
+                                todos
+                                que desejam compartilhar e celebrar a magia da escrita. Junte-se a nós e desperte seu
+                                lado
+                                criativo!
+                            </p>
+                        </div>
+                    </div>
+                </div>
 
+                <div class="event" aria-labelledby="event-2" tabindex="0">
+                    <div class="cover">
+                        <picture>
+                            <img src="/images/low/evento-2.png"
+                                alt="Imagem de uma oficina de escrita criativa com materiais de escrita e pessoas"
+                                loading="lazy" aria-describedby="event-2-description" width="540" height="784">
+                        </picture>
+                    </div>
+                    <div class="info">
+                        <p class="topic">Oficina de Escrita Criativa: Despertando a Imaginação</p>
+                        <div class="text-container">
+                            <p id="event-2-description" class="description">
+                                Embarque em uma oficina prática de escrita criativa onde vamos explorar técnicas para
+                                desbloquear sua imaginação e aprimorar suas habilidades literárias. Ideal para
+                                escritores
+                                iniciantes e experientes que desejam experimentar novos estilos e abordagens.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="event" aria-labelledby="event-3" tabindex="0">
+                    <div class="cover">
+                        <picture>
+                            <img src="/images/low/evento-3.jpeg"
+                                alt="Imagem de uma mesa redonda com discussão sobre literatura" loading="lazy"
+                                aria-describedby="event-3-description" width="640" height="426">
+                        </picture>
+                    </div>
+                    <div class="info">
+                        <p class="topic">Mesa Redonda: Literatura Contemporânea e Representatividade</p>
+                        <div class="text-container">
+                            <p id="event-3-description" class="description">
+                                Um espaço de discussão com autores, críticos e leitores sobre a importância da
+                                representatividade na literatura contemporânea. Debata temas como diversidade de vozes,
+                                narrativas de minorias e o impacto social da literatura atual.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="event" aria-labelledby="event-4" tabindex="0">
+                    <div class="cover">
+                        <picture>
+                            <img src="/images/low/evento-4.jpg"
+                                alt="Imagem de um clube de leitura com livros e discussões" loading="lazy"
+                                aria-describedby="event-4-description" width="720" height="720">
+                        </picture>
+                    </div>
+                    <div class="info">
+                        <p class="topic">Clube de Leitura: Explorando Clássicos e Novidades Literárias</p>
+                        <div class="text-container">
+                            <p id="event-4-description" class="description">
+                                Participe do nosso clube de leitura mensal, onde discutimos clássicos consagrados e
+                                lançamentos. Um encontro aberto para leitores apaixonados trocarem impressões,
+                                ideias e recomendações sobre obras que marcaram e continuam marcando gerações.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <hr class="horiz-line">
+            <article class="article-map" aria-labelledby="map-section">
+                <h3 id="map-section" class="visually-hidden">Mapa de eventos</h3>
+                <div class="map" tabindex="0">
+                    <span>Encontre eventos mais próximos</span>
+                    <p class="location">Serra, ES</p>
+                    <img src="https://www.cnnbrasil.com.br/wp-content/uploads/sites/12/2024/02/google-maps-e1707316052388.png?w=420&h=240&crop=1&quality=85"
+                        alt="Mapa mostrando a localização dos eventos próximos em Serra, ES" loading="lazy" width="420"
+                        height="240">
+                </div>
+            </article>
         </section>
     </main>
 
