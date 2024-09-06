@@ -20,13 +20,17 @@
 
 <body>
     <header class="app-bar">
+        <!-- atributos da tag: class - nome da classe css; -->
         <h1 class="logo" aria-label="Título principal da página">eve</h1>
         <div class="search-input">
             <label for="search-events" class="visually-hidden">Pesquisar por eventos</label>
             <input id="search-events" type="text" placeholder="Pesquisar por eventos..."
                 aria-label="Pesquisar por eventos" aria-required="true" tabindex="0">
+
             <label for="location" class="visually-hidden">Localização</label>
+            <!-- Vamos remover o disabled no futuro e usar o readonly -->
             <input id="location" type="text" placeholder="Localização" disabled aria-label="Localização">
+
             <button aria-label="Buscar eventos" aria-describedby="search-events">
                 <span class="material-symbols-outlined" aria-hidden="true">
                     search
@@ -76,6 +80,8 @@
 
         <section class="listing" aria-labelledby="event-list">
             <h3 id="event-list" class="visually-hidden">Lista de eventos</h3>
+            
+            <!-- Container -->
             <div class="events">
                 <div class="event" aria-labelledby="event-1" tabindex="0">
                     <div class="cover">
