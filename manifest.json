@@ -1,0 +1,43 @@
+{
+    "name": "Eve - Encontre Eventos Perto de Você",
+    "short_name": "Eve",
+    "description": "Encontre eventos perto de você, participe de oficinas de escrita criativa, clubes de leitura e muito mais!",
+    "start_url": "/",
+    "display": "standalone",
+    "background_color": "#ffffff",
+    "theme_color": "#f5f5f5",
+    "icons": [
+        {
+            "src": "/icons/manifest-icon-192.maskable.png",
+            "sizes": "192x192",
+            "type": "image/png",
+            "purpose": "maskable"
+        },
+        {
+            "src": "/icons/manifest-icon-512.maskable.png",
+            "sizes": "512x512",
+            "type": "image/png",
+            "purpose": "maskable"
+        },
+        {
+            "src": "/icons/apple-icon-180.png",
+            "sizes": "180x180",
+            "type": "image/png"
+        }
+    ],
+    "screenshots": [
+        {
+            "src": "/screenshots/screenshot-wide.png",
+            "sizes": "1728x1117",
+            "type": "image/png",
+            "label": "Wide Screen"
+        },
+        {
+            "src": "/screenshots/screenshot-mobile.png",
+            "sizes": "430x989",
+            "type": "image/png",
+            "label": "Mobile Screen"
+        }
+    ],
+    "lang": "pt-BR"
+}
