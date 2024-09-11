@@ -83,13 +83,16 @@
 
             <div class="select" id="tipo" tabindex="0">
                 <div class="input">
-                    <p>Qualquer tipo:</p>
+                    <p id="input-de-tipo">Qualquer tipo:</p>
                     <div class="icon">
                         <span class="material-symbols-outlined" aria-hidden="true">
                             arrow_drop_down
                         </span>
                     </div>
                 </div>
+                <ul id="tipo-lista" class="visually-hidden select-popover">
+                    
+                </ul>
             </div>
 
             <div class="select" id="classificacao" tabindex="0">
@@ -232,6 +235,9 @@
     <footer>
         <p>2024 Todos os direitos reservados.</p>
     </footer>
+
+    <!-- Para que a gente consiga importar outros arquivos javascripts dentro do nosso arquivo "main.js" -->
+    <script src="./scripts/main.js" type="module"></script>
 </body>
 
 </html>
