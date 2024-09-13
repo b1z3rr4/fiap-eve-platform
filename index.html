@@ -17,6 +17,8 @@
     <link rel="manifest" href="/manifest.json">
 
     <link rel="stylesheet" href="/styles/main.css" type="text/css">
+    <link rel="stylesheet" href="/styles/calendar.css" type="text/css">
+    <link rel="stylesheet" href="/styles/select.css" type="text/css">
 
 
     <link rel="stylesheet"
@@ -70,40 +72,71 @@
         <h2 class="title">Eventos perto de você</h2>
 
         <section class="filters">
-            <div class="select" tabindex="0">
-                <div class="input">
-                    <p>Qualquer data:</p>
+            <div class="select" tabindex="0" id="calendar-container">
+                <div class="input" id="select-selected">
+                    <p id="select-date">Qualquer data:</p>
                     <div class="icon">
                         <span class="material-symbols-outlined" aria-hidden="true">
                             arrow_drop_down
                         </span>
                     </div>
+                </div>
+                <div id="calendar" class="calendar">
+                    <div class="calendar-header">
+                        <button class="calendar-button" onclick="changeMonth(-1)" id="prev-month-btn">
+                            <span class="material-symbols-outlined">
+                                arrow_left
+                            </span>
+                        </button>
+                        <span id="current-month-year"></span>
+                        <button class="calendar-button" onclick="changeMonth(1)" id="next-month-btn">
+                            <span class="material-symbols-outlined">
+                                arrow_right
+                            </span>
+                        </button>
+                    </div>
+                    <div class="calendar-grid" id="days-of-week">
+                        <span>Dom</span>
+                        <span>Seg</span>
+                        <span>Ter</span>
+                        <span>Qua</span>
+                        <span>Qui</span>
+                        <span>Sex</span>
+                        <span>Sab</span>
+                    </div>
+                    <div class="calendar-grid" id="calendar-days"></div>
                 </div>
             </div>
-
-            <div class="select" id="tipo" tabindex="0">
-                <div class="input">
-                    <p id="input-de-tipo">Qualquer tipo:</p>
+            
+            <div class="select input-select" id="input-type" tabindex="0">
+                <div class="input" id="selected">
+                    <p id="selected-label">Qualquer tipo:</p>
                     <div class="icon">
                         <span class="material-symbols-outlined" aria-hidden="true">
                             arrow_drop_down
                         </span>
                     </div>
                 </div>
-                <ul id="tipo-lista" class="visually-hidden select-popover">
-                    
+                <ul id="select-options" class="select-options">
+                    <li>Presencial</li>
+                    <li>Online</li>
                 </ul>
             </div>
 
-            <div class="select" id="classificacao" tabindex="0">
-                <div class="input fulfilled">
-                    <p>Classificar por:</p>
-                    <div class="icon fulfilled">
+            <div class="select input-select" id="input-classification" tabindex="0">
+                <div class="input" id="selected">
+                    <p id="selected-label">Classificar por:</p>
+                    <div class="icon">
                         <span class="material-symbols-outlined" aria-hidden="true">
                             arrow_drop_down
                         </span>
                     </div>
                 </div>
+                <ul id="select-options" class="select-options">
+                    <li>Distância</li>
+                    <li>Relevância</li>
+                    <li>Mais Recentes</li>
+                </ul>
             </div>
         </section>
 
@@ -112,111 +145,7 @@
 
             <!-- Container -->
             <div class="events">
-                <div class="event" aria-labelledby="event-1" tabindex="0">
-                    <div class="cover">
-                        <picture>
-                            <source srcset="/images/high/evento-1.jpg" media="(min-resolution: 2dppx)"
-                                sizes="(max-width: 600px) 100vw, 50vw">
-                            <source srcset="/images/low/evento-1.jpeg" media="(max-resolution: 1dppx)"
-                                sizes="(max-width: 600px) 100vw, 50vw">
-                            <img src="/images/low/evento-1.jpeg"
-                                alt="Imagem de um encontro literário com pessoas em um ambiente de escrita"
-                                loading="lazy" aria-describedby="event-1-description" width="275" height="183">
-                        </picture>
-                    </div>
-                    <div class="info">
-                        <p class="topic">Encontro Virtual Literatura e Criatividade</p>
-                        <div class="text-container">
-                            <p id="event-1-description" class="description">
-                                Participe do "Encontro Virtual: Literatura e Criatividade", um evento que celebra o
-                                poder
-                                das palavras e a imaginação sem limites! Reuniremos escritores, leitores e entusiastas
-                                para uma jornada através do mundo literário, explorando técnicas criativas, trocando
-                                experiências e se inspirando em novas histórias. Venha descobrir como a literatura pode
-                                abrir portas para novos universos e conectar pessoas através da criatividade. Seja você
-                                um
-                                autor experiente ou alguém que simplesmente ama boas histórias, este encontro é para
-                                todos
-                                que desejam compartilhar e celebrar a magia da escrita. Junte-se a nós e desperte seu
-                                lado
-                                criativo!
-                            </p>
-                        </div>
-                    </div>
-                </div>
 
-                <div class="event" aria-labelledby="event-2" tabindex="0">
-                    <div class="cover">
-                        <picture>
-                            <source srcset="/images/high/evento-2.png" media="(min-resolution: 2dppx)"
-                                sizes="(max-width: 600px) 100vw, 50vw">
-                            <source srcset="/images/low/evento-2.png" media="(max-resolution: 1dppx)"
-                                sizes="(max-width: 600px) 100vw, 50vw">
-                            <img src="/images/low/evento-2.png"
-                                alt="Imagem de uma oficina de escrita criativa com materiais de escrita e pessoas"
-                                loading="lazy" aria-describedby="event-2-description" width="540" height="784">
-                        </picture>
-                    </div>
-                    <div class="info">
-                        <p class="topic">Oficina de Escrita Criativa: Despertando a Imaginação</p>
-                        <div class="text-container">
-                            <p id="event-2-description" class="description">
-                                Embarque em uma oficina prática de escrita criativa onde vamos explorar técnicas para
-                                desbloquear sua imaginação e aprimorar suas habilidades literárias. Ideal para
-                                escritores
-                                iniciantes e experientes que desejam experimentar novos estilos e abordagens.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="event" aria-labelledby="event-3" tabindex="0">
-                    <div class="cover">
-                        <picture>
-                            <source srcset="/images/high/evento-3.jpeg" media="(min-resolution: 2dppx)"
-                                sizes="(max-width: 600px) 100vw, 50vw">
-                            <source srcset="/images/low/evento-3.jpeg" media="(max-resolution: 1dppx)"
-                                sizes="(max-width: 600px) 100vw, 50vw">
-                            <img src="/images/low/evento-3.jpeg"
-                                alt="Imagem de uma mesa redonda com discussão sobre literatura" loading="lazy"
-                                aria-describedby="event-3-description" width="640" height="426">
-                        </picture>
-                    </div>
-                    <div class="info">
-                        <p class="topic">Mesa Redonda: Literatura Contemporânea e Representatividade</p>
-                        <div class="text-container">
-                            <p id="event-3-description" class="description">
-                                Um espaço de discussão com autores, críticos e leitores sobre a importância da
-                                representatividade na literatura contemporânea. Debata temas como diversidade de vozes,
-                                narrativas de minorias e o impacto social da literatura atual.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="event" aria-labelledby="event-4" tabindex="0">
-                    <div class="cover">
-                        <picture>
-                            <source srcset="/images/high/evento-4.jpg" media="(min-resolution: 2dppx)"
-                                sizes="(max-width: 600px) 100vw, 50vw">
-                            <source srcset="/images/low/evento-4.jpg" media="(max-resolution: 1dppx)"
-                                sizes="(max-width: 600px) 100vw, 50vw">
-                            <img src="/images/low/evento-4.jpg"
-                                alt="Imagem de um clube de leitura com livros e discussões" loading="lazy"
-                                aria-describedby="event-4-description" width="720" height="720">
-                        </picture>
-                    </div>
-                    <div class="info">
-                        <p class="topic">Clube de Leitura: Explorando Clássicos e Novidades Literárias</p>
-                        <div class="text-container">
-                            <p id="event-4-description" class="description">
-                                Participe do nosso clube de leitura mensal, onde discutimos clássicos consagrados e
-                                lançamentos. Um encontro aberto para leitores apaixonados trocarem impressões,
-                                ideias e recomendações sobre obras que marcaram e continuam marcando gerações.
-                            </p>
-                        </div>
-                    </div>
-                </div>
             </div>
             <hr class="horiz-line">
             <article class="article-map" aria-labelledby="map-section">
@@ -238,6 +167,8 @@
 
     <!-- Para que a gente consiga importar outros arquivos javascripts dentro do nosso arquivo "main.js" -->
     <script src="./scripts/main.js" type="module"></script>
+    <script src="./scripts/calendar.js" type="module"></script>
+    <script src="./scripts/select.js" type="module"></script>
 </body>
 
 </html>

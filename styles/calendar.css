@@ -1,0 +1,67 @@
+.select {
+    font-family: Arial, sans-serif;
+}
+
+.input {
+    padding: 10px;
+    cursor: pointer;
+    user-select: none;
+    background: #fff;
+    position: relative;
+    white-space: nowrap;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+}
+
+.calendar {
+    margin: 0;
+    z-index: 99;
+    padding: 10px;
+    display: none;
+    position: absolute;
+    border-radius: 10px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 0 6px 20px rgba(0, 0, 0, 0.1);
+}
+
+.calendar.open {
+    display: block;
+}
+
+.calendar-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    justify-content: space-between;
+}
+
+.calendar-grid {
+    gap: 5px;
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+}
+
+.calendar-day {
+    padding: 10px;
+    cursor: pointer;
+    text-align: center;
+    border-radius: 5px;
+}
+
+.calendar-day:hover {
+    background-color: #ddd;
+}
+
+.calendar-day.selected {
+    background-color: #007bff;
+    color: #fff;
+}
+
+.calendar-button {
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 10px;
+    background: transparent;
+}
