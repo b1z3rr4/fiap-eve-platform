@@ -1,4 +1,4 @@
-import { fetchApi } from "./api";
+import { fetchApi } from "./api.js";
 
 export async function getToken() {
     const response = await fetchApi('/auth', {
