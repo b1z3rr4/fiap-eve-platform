@@ -108,7 +108,7 @@
                 </div>
             </div>
             
-            <div class="select input-select" id="input-type" tabindex="0">
+            <div class="select input-select" id="input-type" data-label="tipo" tabindex="0">
                 <div class="input" id="selected">
                     <p id="selected-label">Qualquer tipo:</p>
                     <div class="icon">
@@ -118,12 +118,12 @@
                     </div>
                 </div>
                 <ul id="select-options" class="select-options">
-                    <li>Presencial</li>
-                    <li>Online</li>
+                    <li data-value="presencial">Presencial</li>
+                    <li data-value="online">Online</li>
                 </ul>
             </div>
 
-            <div class="select input-select" id="input-classification" tabindex="0">
+            <div class="select input-select" id="input-classification" data-label="classificacao" tabindex="0">
                 <div class="input" id="selected">
                     <p id="selected-label">Classificar por:</p>
                     <div class="icon">
@@ -133,37 +133,28 @@
                     </div>
                 </div>
                 <ul id="select-options" class="select-options">
-                    <li>Distância</li>
-                    <li>Relevância</li>
-                    <li>Mais Recentes</li>
+                    <li data-value="distancia">Distância</li>
+                    <li data-value="relevancia">Relevância</li>
+                    <li data-value="recentes"">Mais Recentes</li>
                 </ul>
+            </div>
+
+            <div class="select" id="clear">
+                <span class="input">Limpar filtros</span>
             </div>
         </section>
 
         <section class="listing" aria-labelledby="event-list">
             <h3 id="event-list" class="visually-hidden">Lista de eventos</h3>
-
             <!-- Container -->
             <div class="events" id="events"></div>
-
-            <hr class="horiz-line">
-            <article class="article-map" aria-labelledby="map-section">
-                <h3 id="map-section" class="visually-hidden">Mapa de eventos</h3>
-                <div class="map" tabindex="0">
-                    <span>Encontre eventos mais próximos</span>
-                    <p class="location">Serra, ES</p>
-                    <img src="https://www.cnnbrasil.com.br/wp-content/uploads/sites/12/2024/02/google-maps-e1707316052388.png?w=420&h=240&crop=1&quality=85"
-                        alt="Mapa mostrando a localização dos eventos próximos em Serra, ES" loading="lazy" width="420"
-                        height="240">
-                </div>
-            </article>
         </section>
     </main>
 
     <footer>
         <p>2024 Todos os direitos reservados.</p>
     </footer>
-
+    
     <!-- Para que a gente consiga importar outros arquivos javascripts dentro do nosso arquivo "main.js" -->
     <script src="./scripts/main.js" type="module"></script>
     <script src="./scripts/calendar.js" type="module"></script>

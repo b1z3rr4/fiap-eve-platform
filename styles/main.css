@@ -41,6 +41,7 @@
 
 html, body {
     width: 100vw;
+    font-size: 16px;
     font-family: var(--roboto-font);
 }
 
@@ -71,6 +72,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .app-bar {
     top: 0;
+    z-index: 1;
     position: sticky; /* Ele comeca como relative depois vira absoluto */
     padding: 10px 20px;
     background: var(--surface-color);
@@ -128,7 +130,7 @@ main {
 }
 
 .topic {
-    font-size: 18px;
+    font-size: 1rem;
     font-weight: bold;
     color: var(--text-color);
 }
@@ -199,7 +201,7 @@ main {
 }
 
 .location {
-    font-size: 20px;
+    font-size: 1.5rem;
     font-weight: 500;
     color: var(--text-color);
 }
@@ -235,4 +237,64 @@ footer p {
 /* Aria hiddens */
 .visually-hidden {
     display: none;
+}
+
+
+@media (min-width: 1024px) {
+    main {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .title {
+        width: 70%;
+    }
+
+    .filters {
+        width: 70%;
+    }
+
+    .listing {
+        width: 70%;
+    }
+
+    .events {
+        width: 70%;
+    }
+
+    .event {
+        gap: 24px;
+        border: none;
+        display: flex;
+        padding: 10px 0;
+        border-radius: 0;
+        border-bottom: 1px solid var(--border-color);
+    }
+
+    .cover {
+        width: 20%;
+    }
+
+    .cover img {
+        aspect-ratio: 4 / 3;
+    }
+
+    .info {
+        width: 60%;
+    }
+    
+    .topic {
+        font-size: 16px;
+    }
+
+    .description {
+        font-size: 14px;
+    }
+}
+
+@media (min-width: 1440pc) {
+    html, body {
+        font-size: 20px;
+    }
 }

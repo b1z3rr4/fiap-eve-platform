@@ -29,14 +29,7 @@ function populateDays() {
         const containerDay = document.createElement('div');
         containerDay.classList.add('calendar-day');
         containerDay.textContent = day;
- 
-        // 1 ->  01
-        // 24 -> 24
-        const isDaySelected = selectSelected === `${day.toString().padStart(2, '0')}/${(currentMonth + 1).toString().padStart(2, '0')}/${currentYear}`;
-        if (isDaySelected) {
-            containerDay.classList.add('fulfilled');
-        }
-        
+
         containerDay.addEventListener('click', () => selectDate(day));
         calendarDays.appendChild(containerDay);
     }
@@ -58,7 +51,21 @@ function selectDate(day) {
 
     dateSelected.textContent = `Data: ${selectedDate}`;
 
+    const isDaySelected = selectedDate === `${dayFormatted}/${month}/${currentYear}`;
+
+    if (isDaySelected) {
+        selectSelected.classList.add('fulfilled');
+    } else {
+        selectSelected.classList.remove('fulfilled');
+    }
+
     calendar.classList.remove('open');
+
+    const filterEvent = new CustomEvent('filters', {
+        detail: { label: 'dia', value: `${currentYear}-${month}-${dayFormatted}` }
+    })
+
+    document.dispatchEvent(filterEvent);
 
     populateDays();
 }
