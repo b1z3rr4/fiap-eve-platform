@@ -17,7 +17,7 @@ function generateCard(event, index, main) {
 
     // Imagem do card
     // Container da imagem
-    const cover =  document.createElement('div');
+    const cover = document.createElement('div');
     cover.className = 'cover';
 
     // Picture
@@ -61,7 +61,7 @@ function generateCard(event, index, main) {
     topic.textContent = event.nome;
 
     info.appendChild(topic);
-    
+
     const textContainer = document.createElement('div');
     textContainer.className = 'text-container';
 
@@ -85,18 +85,26 @@ function generateCard(event, index, main) {
 
 export async function loadEvents(params = '') {
     try {
-        const events = await getEvents(params);
-        const main = document.getElementById('events');
 
+        const loader = document.getElementById('loader');
+        loader.classList.remove('hidden');
+
+        const main = document.getElementById('events');
         main.innerHTML = '';
 
+        const events = await getEvents(params);
+
+
         if (events?.length === 0) {
+            loader.classList.add('hidden');
             return main.innerHTML = '<p>Nehum evento encontrado.</p>'
         }
 
         events?.forEach((event, index) => {
             generateCard(event, index, main);
         });
+
+        loader.classList.add('hidden');
     } catch (error) {
         console.error('Erro ao carregar eventos:', error);
     }

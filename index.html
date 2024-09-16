@@ -107,7 +107,7 @@
                     <div class="calendar-grid" id="calendar-days"></div>
                 </div>
             </div>
-            
+
             <div class="select input-select" id="input-type" data-label="tipo" tabindex="0">
                 <div class="input" id="selected">
                     <p id="selected-label">Qualquer tipo:</p>
@@ -139,13 +139,18 @@
                 </ul>
             </div>
 
-            <div class="select" id="clear">
-                <span class="input">Limpar filtros</span>
+            <div class=" select" id="clear">
+                        <span class="input">Limpar filtros</span>
             </div>
         </section>
 
         <section class="listing" aria-labelledby="event-list">
             <h3 id="event-list" class="visually-hidden">Lista de eventos</h3>
+
+            <div id="loader" class="loader hidden">
+                <div class="spinner"></div>
+            </div>
+
             <!-- Container -->
             <div class="events" id="events"></div>
         </section>
@@ -154,7 +159,7 @@
     <footer>
         <p>2024 Todos os direitos reservados.</p>
     </footer>
-    
+
     <!-- Para que a gente consiga importar outros arquivos javascripts dentro do nosso arquivo "main.js" -->
     <script src="./scripts/main.js" type="module"></script>
     <script src="./scripts/calendar.js" type="module"></script>
