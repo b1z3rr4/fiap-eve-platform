@@ -4,9 +4,9 @@ import { loadEvents } from "./events.js";
 const filters = {
     dia: null,
     tipo: null,
-    classificacao: null,
     lat: null,
     lon: null,
+    classificacao: 'relevancia',
 }
 
 document.addEventListener('DOMContentLoaded', () => {
