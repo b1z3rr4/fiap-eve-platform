@@ -123,6 +123,22 @@ main {
     border: 1px solid var(--border-color);
 }
 
+.text-container {
+    gap: 12px;
+    display: flex;
+    flex-direction: column;
+}
+
+.event-type {
+    padding: 6px;
+    font-size: 12px;
+    width: fit-content;
+    border-radius: 10px;
+    text-transform: capitalize;
+    color: var(--muted-text-color);
+    border: 1px solid var(--border-color);
+}
+
 .info {
     gap: 12px;
     display: flex;

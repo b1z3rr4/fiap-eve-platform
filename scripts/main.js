@@ -1,11 +1,25 @@
 import { mountQuery } from "../utils/query.js";
 import { loadEvents } from "./events.js";
 
-const filters  = {
+const filters = {
     dia: null,
     tipo: null,
     classificacao: null,
+    lat: null,
+    lon: null,
 }
+
+document.addEventListener('DOMContentLoaded', () => {
+    if ('geolocation' in navigator) {
+        navigator.geolocation.getCurrentPosition((position) => {
+            const lat = position.coords.latitude;
+            const lon = position.coords.longitude;
+
+            filters.lat = lat;
+            filters.lon = lon;
+        })
+    }
+});
 
 document.addEventListener('DOMContentLoaded', () => loadEvents());
 

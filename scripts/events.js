@@ -70,7 +70,12 @@ function generateCard(event, index, main) {
     description.className = 'description';
     description.textContent = event.descricao;
 
+    const detailsType = document.createElement('span');
+    detailsType.textContent = event.tipo;
+    detailsType.classList.add('event-type');
+
     textContainer.appendChild(description);
+    textContainer.appendChild(detailsType);
 
     info.appendChild(textContainer);
     card.appendChild(info);
